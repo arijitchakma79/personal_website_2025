@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e4cf6b82.css",
+    "main.js": "/static/js/main.c429aa6c.js",
+    "static/media/snap1.png": "/static/media/snap1.9f75a3112f6f93905c3a.png",
+    "static/media/snap5.png": "/static/media/snap5.5ddf032d8058ffbb3882.png",
+    "static/media/skyhigh.jpg": "/static/media/skyhigh.f05e66e395007ae198d8.jpg",
+    "static/media/snap7.png": "/static/media/snap7.c21a01642c1783bc9a7a.png",
+    "static/media/snap2.png": "/static/media/snap2.206ed97fc784447a3720.png",
+    "static/media/profile_pic.JPG": "/static/media/profile_pic.926e4cb62da9a14977c0.JPG",
+    "static/media/snap6.png": "/static/media/snap6.be1032e883427f1f0100.png",
+    "static/media/snap3.png": "/static/media/snap3.1227ff9a58e06ed5c135.png",
+    "static/media/scout.jpg": "/static/media/scout.944b87110d080a3ff180.jpg",
+    "static/media/thrifthub.jpg": "/static/media/thrifthub.191a4c6a472559b93fb4.jpg",
+    "static/media/snap4.png": "/static/media/snap4.48875cedac599b122854.png",
+    "static/media/visualed.jpg": "/static/media/visualed.ef5dd5e8dd74aeb90497.jpg",
+    "static/media/pigeonpost.png": "/static/media/pigeonpost.7c0c9a3ed0023c07c494.png",
+    "static/media/snap8.png": "/static/media/snap8.eed12f82ea58ee6fa7f1.png",
+    "static/media/resume.pdf": "/static/media/resume.c6728496a85329966e4c.pdf",
+    "static/media/deneyes.jpg": "/static/media/deneyes.08a3dc5414695aef1111.jpg",
+    "static/media/drexel_logo.png": "/static/media/drexel_logo.3a799401af440b6414bd.png",
+    "static/media/soundshield.jpg": "/static/media/soundshield.b6ed911513f35d6f8f94.jpg",
+    "index.html": "/index.html",
+    "main.e4cf6b82.css.map": "/static/css/main.e4cf6b82.css.map",
+    "main.c429aa6c.js.map": "/static/js/main.c429aa6c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4cf6b82.css",
+    "static/js/main.c429aa6c.js"
+  ]
+}
