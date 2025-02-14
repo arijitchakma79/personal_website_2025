@@ -1,4 +1,8 @@
 /* Home.css */
+:root {
+    --primary-bg: #000000;
+}
+
 .home {
     max-width: 1200px;
     margin: 0 auto;
@@ -29,57 +33,132 @@
     color: #999999;
 }
 
+.bio b {
+    color: #ffffff;
+    font-weight: 600;
+}
+
 .bio p {
     margin-bottom: 20px;
 }
 
-.highlight {
-    color: #ff6b6b;
-    text-decoration: none;
+.bio ul {
+    margin-left: 20px;
+    margin-top: 10px;
+    list-style-type: none;
 }
 
-a.highlight:hover {
-    text-decoration: underline;
+.bio li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.bio li::before {
+    content: "•";
+    color: #999999;
+    position: absolute;
+    left: -15px;
+}
+
+.bio a, 
+.email-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.bio a:hover, 
+.email-link:hover {
+    color: #ff6b6b;
 }
 
 /* Snapshots Section */
 .snapshots {
-    margin-top: 80px;
+    margin-top: 100px;
+    position: relative;
 }
 
 .snapshots h2 {
     font-size: 32px;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
+
     color: #ffffff;
 }
 
-.image-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px 0;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-.image-grid::-webkit-scrollbar {
-    display: none;
+.scroll-container::before,
+.scroll-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.scroll-container::before {
+    left: 0;
+    background: linear-gradient(to right, #000000 0%, transparent 100%);
+    opacity: 0.3;
+}
+
+.scroll-container::after {
+    right: 0;
+    background: linear-gradient(to left, #000000 0%, transparent 100%);
+    opacity: 0.3;
+}
+.image-grid {
+    display: flex;
+    gap: 24px;
+    padding: 20px 0;
+    width: max-content;  /* Ensures container grows with images */
+    animation: scroll 50s linear infinite; /* Adjust duration for smooth scrolling */
+}
+
+.image-grid:hover {
+    animation-play-state: paused;
 }
 
 .snapshot-img {
-    min-width: 300px;
-    height: 200px;
+    width: 600px;  /* Increased from 400px */
+    height: 400px; /* Increased from 300px */
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: transform 0.3s ease;
-    scroll-snap-align: start;
 }
 
 .snapshot-img:hover {
     transform: scale(1.05);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+/* Large screens */
+@media (min-width: 1400px) {
+    .home {
+        max-width: 1400px;
+    }
+}
+
+/* Large Tablet styles */
+@media (max-width: 1024px) {
+    .snapshot-img {
+        width: 350px;
+        height: 250px;
+    }
 }
 
 /* Tablet styles */
@@ -97,8 +176,12 @@ a.highlight:hover {
     }
 
     .snapshot-img {
-        min-width: 250px;
-        height: 180px;
+        width: 300px;
+        height: 200px;
+    }
+    
+    .image-grid {
+        gap: 16px;
     }
 
     .snapshots h2 {
@@ -126,8 +209,12 @@ a.highlight:hover {
     }
 
     .snapshot-img {
-        min-width: 200px;
-        height: 150px;
+        width: 250px;
+        height: 180px;
+    }
+    
+    .image-grid {
+        gap: 12px;
     }
 
     .snapshots {
@@ -138,94 +225,13 @@ a.highlight:hover {
         font-size: 24px;
         margin-bottom: 20px;
     }
-}
 
-/* Home.css */
-/* ... (keep your existing styles) ... */
-
-/* Snapshots Section with Animation */
-.snapshots {
-    margin-top: 80px;
-    width: 100%;
-    overflow: hidden; /* Hide overflow */
-    position: relative;
-}
-
-.image-grid {
-    display: flex;
-    gap: 20px;
-    padding: 20px 0;
-    animation: scroll 30s linear infinite;
-    width: max-content; /* Allow container to be as wide as needed */
-}
-
-/* Double the images for seamless loop */
-.image-grid-inner {
-    display: flex;
-    gap: 20px;
-}
-
-.snapshot-img {
-    min-width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.snapshot-img:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-/* Animation */
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
+    .bio ul {
+        margin-left: 15px;
     }
-    100% {
-        transform: translateX(-50%);
-    }
-}
 
-/* Pause animation on hover */
-.image-grid:hover {
-    animation-play-state: paused;
-}
-
-/* Gradient overlay for smooth edges */
-.snapshots::before,
-.snapshots::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100px;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.snapshots::before {
-    left: 0;
-    background: linear-gradient(to right, var(--primary-bg), transparent);
-}
-
-.snapshots::after {
-    right: 0;
-    background: linear-gradient(to left, var(--primary-bg), transparent);
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .snapshot-img {
-        min-width: 250px;
-        height: 180px;
-    }
-}
-
-@media (max-width: 480px) {
-    .snapshot-img {
-        min-width: 200px;
-        height: 150px;
+    .scroll-container::before,
+    .scroll-container::after {
+        width: 30px;
     }
 }

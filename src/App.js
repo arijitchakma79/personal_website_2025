@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Home, Resume, Projects } from './pages';
-import { Sidebar } from './components';
+import { Sidebar, Footer } from './components'; // Import Footer
 import './styles/App.css';
 
 const App = () => {
@@ -16,6 +16,7 @@ const App = () => {
             <Route path="/projects" element={<Projects />} />
           </Routes>
         </main>
+        <Footer /> {/* Ensure Footer is outside .main-content */}
       </div>
     </Router>
   );

@@ -1,4 +1,3 @@
-/* App.css */
 :root {
   --primary-bg: #000000;
   --sidebar-bg: #111111;
@@ -10,12 +9,14 @@
   --sidebar-mobile-width: 60px;
 }
 
+/* Reset Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body */
 body {
   background-color: var(--primary-bg);
   color: var(--text-primary);
@@ -23,22 +24,14 @@ body {
   overflow-x: hidden;
 }
 
+/* App Layout */
 .app {
   display: flex;
-  min-height: 100vh;
-  position: relative;
+  flex-direction: column; /* Ensures the main-content & footer are stacked */
+  min-height: 100vh; /* Makes sure the footer is pushed to the bottom */
 }
 
-.main-content {
-  flex: 1;
-  padding: 2rem;
-  margin-left: var(--sidebar-width);
-  width: calc(100% - var(--sidebar-width));
-  max-width: calc(100% - var(--sidebar-width));
-  overflow-x: hidden;
-}
-
-/* Sidebar Styles */
+/* Sidebar */
 .sidebar {
   position: fixed;
   left: 0;
@@ -52,6 +45,19 @@ body {
   z-index: 1000;
 }
 
+/* Main Content */
+.main-content {
+  flex: 1; /* Expands to take remaining space */
+  padding: 2rem;
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+  max-width: calc(100% - var(--sidebar-width));
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation Links */
 .nav-links {
   display: flex;
   flex-direction: column;
@@ -79,6 +85,7 @@ body {
   color: var(--text-primary);
 }
 
+/* Social Links */
 .social-links {
   margin-top: auto;
   display: flex;
@@ -108,6 +115,32 @@ body {
   padding: 0.5rem;
   border-radius: 6px;
   cursor: pointer;
+  color: var(--text-primary);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--primary-bg); /* Same as sidebar */
+  color: var(--text-secondary);
+  font-size: 14px;
+  width: 100%;
+  margin-top: auto; /* Pushes footer to bottom */
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: var(--accent-color);
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
   color: var(--text-primary);
 }
 
