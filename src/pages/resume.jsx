@@ -1,13 +1,25 @@
 import React from 'react';
-import { GraduationCap, Briefcase, Award } from 'lucide-react';
+import { GraduationCap, Briefcase, Award, FileText } from 'lucide-react';
 import '../styles/resume.css';
 import logo from "../assets/drexel_logo.png"
+import resumePDF from "../assets/resume.pdf"
 
 
 const Resume = () => {
     return (
         <div className="resume">
-            <h1>RESUME</h1>
+            <div className="resume-header">
+                <h1>RESUME</h1>
+                <a 
+                    href={resumePDF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="resume-button"
+                >
+                    <FileText size={20} />
+                    <span>View Full Resume</span>
+                </a>
+            </div>
 
             <p className="subtitle">Looking for SWE Intern/Co-op positions for Summer 26</p>
 
@@ -120,7 +132,7 @@ const Resume = () => {
                     <Award className="icon" size={20} />
                     <div className="content">
                         <h3>Drexel Global Scholarship</h3>
-                        <p className="subtitle">1/13 international students who were awareded this prestigious scholarship in 2022</p>
+                        <p className="subtitle">1 out of 13 international students who were awarded this prestigious scholarship in 2022</p>
                     </div>
                 </div>
             </section>
