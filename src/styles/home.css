@@ -1,0 +1,231 @@
+/* Home.css */
+.home {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Intro Section */
+.intro {
+    margin-bottom: 60px;
+}
+
+.intro h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #999999;
+    margin-bottom: 30px;
+}
+
+.bio {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #999999;
+}
+
+.bio p {
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #ff6b6b;
+    text-decoration: none;
+}
+
+a.highlight:hover {
+    text-decoration: underline;
+}
+
+/* Snapshots Section */
+.snapshots {
+    margin-top: 80px;
+}
+
+.snapshots h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.image-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.image-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.snapshot-img {
+    min-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    scroll-snap-align: start;
+}
+
+.snapshot-img:hover {
+    transform: scale(1.05);
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .bio {
+        font-size: 15px;
+    }
+
+    .snapshot-img {
+        min-width: 250px;
+        height: 180px;
+    }
+
+    .snapshots h2 {
+        font-size: 28px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    .home {
+        padding: 15px;
+    }
+
+    .intro h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .bio {
+        font-size: 14px;
+    }
+
+    .snapshot-img {
+        min-width: 200px;
+        height: 150px;
+    }
+
+    .snapshots {
+        margin-top: 40px;
+    }
+
+    .snapshots h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Home.css */
+/* ... (keep your existing styles) ... */
+
+/* Snapshots Section with Animation */
+.snapshots {
+    margin-top: 80px;
+    width: 100%;
+    overflow: hidden; /* Hide overflow */
+    position: relative;
+}
+
+.image-grid {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    animation: scroll 30s linear infinite;
+    width: max-content; /* Allow container to be as wide as needed */
+}
+
+/* Double the images for seamless loop */
+.image-grid-inner {
+    display: flex;
+    gap: 20px;
+}
+
+.snapshot-img {
+    min-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.snapshot-img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.image-grid:hover {
+    animation-play-state: paused;
+}
+
+/* Gradient overlay for smooth edges */
+.snapshots::before,
+.snapshots::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.snapshots::before {
+    left: 0;
+    background: linear-gradient(to right, var(--primary-bg), transparent);
+}
+
+.snapshots::after {
+    right: 0;
+    background: linear-gradient(to left, var(--primary-bg), transparent);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .snapshot-img {
+        min-width: 250px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .snapshot-img {
+        min-width: 200px;
+        height: 150px;
+    }
+}
