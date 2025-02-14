@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Home, FileText, Boxes,  Instagram, Linkedin, Github, Menu, X } from 'lucide-react';
-import profileImg from '../assets/image1.png';
+import profileImg from '../assets/profile_pic.JPG';
 import '../styles/sidebar.css';
 
 const Sidebar = () => {

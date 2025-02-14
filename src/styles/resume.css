@@ -1,0 +1,174 @@
+/* Resume.css */
+.resume {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #ffffff;
+}
+
+.resume h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.resume .subtitle {
+    color: #999999;
+    font-size: clamp(16px, 2.5vw, 20px);
+    margin-bottom: 40px;
+}
+
+.resume-section {
+    margin-bottom: 60px;
+}
+
+.resume-section h2 {
+    font-size: clamp(24px, 4vw, 32px);
+    margin-bottom: 25px;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.resume-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #ff6b6b;
+}
+
+.item {
+    display: flex;
+    align-items: center; /* Changed to center for better alignment */
+    margin-bottom: 25px;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.icon {
+    color: #999999;
+    min-width: 20px;
+}
+
+.content {
+    flex: 1;
+}
+
+.content h3 {
+    font-size: clamp(16px, 2.5vw, 20px);
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.content .subtitle {
+    font-size: clamp(14px, 2vw, 16px);
+    color: #999999;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.company-logo {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects */
+.item:hover .icon {
+    color: #ff6b6b;
+    transform: scale(1.1);
+}
+
+.item:hover .content h3 {
+    color: #ff6b6b;
+}
+
+.item:hover .company-logo {
+    transform: scale(1.05);
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+    .resume {
+        padding: 30px 15px;
+    }
+
+    .resume-section {
+        margin-bottom: 40px;
+    }
+
+    .item {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .company-logo {
+        width: 150px; /* Adjusted for tablet */
+        height: 150px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .resume {
+        padding: 20px 12px;
+    }
+
+    .resume-section {
+        margin-bottom: 30px;
+    }
+
+    .item {
+        flex-direction: column; /* Stack elements vertically on mobile */
+        gap: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+        align-items: flex-start;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .company-logo {
+        width: 100px; /* Smaller but still visible on mobile */
+        height: 100px;
+        margin: 10px auto; /* Center the logo */
+    }
+
+    .icon {
+        margin-bottom: 5px;
+    }
+
+    .resume-section h2::after {
+        width: 40px;
+        height: 2px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .resume {
+        padding: 0;
+    }
+
+    .item:hover {
+        background-color: transparent;
+    }
+
+    .item:hover .icon,
+    .item:hover .content h3 {
+        color: inherit;
+    }
+}
