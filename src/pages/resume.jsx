@@ -33,7 +33,7 @@ const Resume = () => {
                     <Briefcase className="icon" size={20} />
                     <div className="content">
                         <h3>UG Researcher</h3>
-                        <p className="subtitle">Drexel University, Sep 2024 - Present</p>
+                        <p className="subtitle">Drexel University College of Engineering, Sep 2024 - Present</p>
                     </div>
                 </div>
                 <div className="item">
