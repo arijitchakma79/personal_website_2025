@@ -14,7 +14,7 @@ const Sidebar = () => {
     ];
 
     const socialLinks = [
-        { icon: <Instagram size={20} />, url: '#', label: 'Instagram' },
+        { icon: <Instagram size={20} />, url: 'https://www.instagram.com/80asfluffshi/', label: 'Instagram' },
         { icon: <Linkedin size={20} />, url: 'https://www.linkedin.com/in/arijitchakma/', label: 'LinkedIn' },
         { icon: <Github size={20} />, url: 'https://github.com/arijitchakma79/', label: 'Github' }
     ];
