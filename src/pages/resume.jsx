@@ -44,8 +44,22 @@ const Resume = () => {
                 <div className="item">
                     <Briefcase className="icon" size={20} />
                     <div className="content">
+                        <h3>Machine Learning Fellow</h3>
+                        <p className="subtitle">Cornell Tech (Break Through Tech AI Program), April 2025 -  Present</p>
+                    </div>
+                </div>
+                <div className="item">
+                    <Briefcase className="icon" size={20} />
+                    <div className="content">
+                        <h3>AI Researcher</h3>
+                        <p className="subtitle">Drexel University College of Computing & Informatics, April 2025 -  Present</p>
+                    </div>
+                </div>
+                <div className="item">
+                    <Briefcase className="icon" size={20} />
+                    <div className="content">
                         <h3>UG Researcher</h3>
-                        <p className="subtitle">Drexel University College of Engineering, Sep 2024 - Present</p>
+                        <p className="subtitle">Drexel University College of Engineering, Sep 2024 - Mar 2025</p>
                     </div>
                 </div>
                 <div className="item">

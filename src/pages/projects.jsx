@@ -8,10 +8,19 @@ import pigeonpost from '../assets/pigeonpost.png';
 import visualed from '../assets/visualed.jpg';
 import soundshield from '../assets/soundshield.jpg';
 import thrifthub from '../assets/thrifthub.jpg'
+import ventureahead from '../assets/ventureahead.png';
 
 
 const Projects = () => {
     const projects = [
+        {
+            title: "VentureAhead.AI",
+            description: "An AI-powered multi-agent platform that streamlines business and product ideation, market research, strategic analysis, and future outcome simulation to help entrepreneurs, business owners and corporations with data-driven insights to turn ideas into viable ventures and make right decision on the way.",
+            category: "Technical",
+            image: ventureahead,
+            icon: <Globe size={20} />,
+            link: "https://github.com/arijitchakma79/PhillyCodefest25",
+        },
         {
             title: "SkyHigh",
             description: "A IOT Frisbee equipped with multi agent AI systems capable to scan the critical areas during a search and rescue mission and provide helpful inspections regarding the area.",
