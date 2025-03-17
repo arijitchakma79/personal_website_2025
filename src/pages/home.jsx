@@ -8,6 +8,8 @@ import image5 from '../assets/snap5.png';
 import image6 from '../assets/snap6.png';
 import image7 from '../assets/snap7.png';
 import image8 from '../assets/snap8.png';
+import image9 from '../assets/snap9.png';
+import image10 from '../assets/snap10.png';
 
 const Home = () => {
     const snapshots = [
@@ -18,7 +20,9 @@ const Home = () => {
         { src: image5, alt: "Drexel Statue during Winter" },
         { src: image6, alt: "Group photo with friends" },
         { src: image7, alt: "PennApps 2024 Project" },
-        { src: image8, alt: "At Columbia 2024" }
+        { src: image8, alt: "At Columbia 2024" },
+        { src: image9, alt: "At Philly CodeFest 25" },
+        { src: image10, alt: "At Philly Codefest 25" },
     ];
 
     return (
