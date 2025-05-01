@@ -9,10 +9,18 @@ import visualed from '../assets/visualed.jpg';
 import soundshield from '../assets/soundshield.jpg';
 import thrifthub from '../assets/thrifthub.jpg'
 import ventureahead from '../assets/ventureahead.png';
-
+import woundwatch from '../assets/woundWatch.png'
 
 const Projects = () => {
     const projects = [
+        {
+            title: "WoundWatch",
+            description: "an AI-powered app to reconstruct 3D wound models from 2D images using depth estimation and segmentation,supporting real-time clinical analysis and supporting remote healthcare for patients.",
+            category: "Technical",
+            image: woundwatch,
+            icon: <Globe size={20} />,
+            link: "https://devpost.com/software/deepcare-ai",
+        },
         {
             title: "VentureAhead.AI",
             description: "An AI-powered multi-agent platform that streamlines business and product ideation, market research, strategic analysis, and future outcome simulation to help entrepreneurs, business owners and corporations with data-driven insights to turn ideas into viable ventures and make right decision on the way.",

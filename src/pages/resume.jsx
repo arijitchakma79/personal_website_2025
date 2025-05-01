@@ -103,6 +103,20 @@ const Resume = () => {
                 <div className="item">
                     <Award className="icon" size={20} />
                     <div className="content">
+                        <h3>Best Social Impact Hack</h3>
+                        <p className="subtitle">DragonHacks 2025 @ (Drexel University)</p>
+                    </div>
+                </div>
+                <div className="item">
+                    <Award className="icon" size={20} />
+                    <div className="content">
+                        <h3>Best Beginner Quantum Computing Track</h3>
+                        <p className="subtitle">Bitcamps 2025 @ (University of Maryland, College Park)</p>
+                    </div>
+                </div>
+                <div className="item">
+                    <Award className="icon" size={20} />
+                    <div className="content">
                         <h3>Best Overall First</h3>
                         <p className="subtitle">PennApps 2024 @ (University of Pennsylvania)</p>
                     </div>
