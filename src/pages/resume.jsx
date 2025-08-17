@@ -44,7 +44,7 @@ const Resume = () => {
                 <div className="item">
                     <Briefcase className="icon" size={20} />
                     <div className="content">
-                        <h3>AI Engineer Sprintership</h3>
+                        <h3>AI Software Engineer</h3>
                         <p className="subtitle">ASAPP, August 2025 -  Present</p>
                     </div>
                 </div>

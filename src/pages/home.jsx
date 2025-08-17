@@ -21,7 +21,7 @@ const Home = () => {
                         <br/><br/>Currently, I am:
                         <ul>
                             <li><p>Actively seeking <b>SWE / ML / AI</b> positions for Spring/Summer <b>2026</b>.</p></li>
-                            <li><p>Working on a first author AI paper at Visual Intelligence Lab, Drexel CCI under Dr.Feng Liu.</p></li>
+                            <li><p>Working on publishing a first author AI paper at Visual Intelligence Lab, Drexel CCI under Dr.Feng Liu.</p></li>
                             <li><p>Deepening my knowledge in Computer Vision and Machine Learning.</p></li>
                         </ul>
                         <p>Feel free to reach out at <a href="mailto:ac4393@drexel.edu" className="email-link">ac4393@drexel.edu</a>!</p>
