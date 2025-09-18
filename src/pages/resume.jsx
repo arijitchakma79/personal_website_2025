@@ -35,8 +35,18 @@ const Resume = () => {
                     <img src={logo} alt="Drexel" className="company-logo" />
                 </div>
             </section>
-
             
+            {/* Education Section */}
+            <section className="resume-section">
+                <h2>Publications</h2>
+                <div className="item">
+                    <GraduationCap className="icon" size={20} />
+                    <div className="content">
+                        <h3>NGSS-DrawSim: AI-Generated Student Science Drawings for Teacher Assessment and Professional Development</h3>
+                        <p className="subtitle">Arijit Chakma, Peng He, Tingting Li, Tiffany D. Do, and Feng Liu. Under review.</p>
+                    </div>
+                </div>
+            </section>
 
             {/* Experience Section */}
             <section className="resume-section">
@@ -44,7 +54,14 @@ const Resume = () => {
                 <div className="item">
                     <Briefcase className="icon" size={20} />
                     <div className="content">
-                        <h3>AI Software Engineer</h3>
+                        <h3>Teaching Assistant</h3>
+                        <p className="subtitle">Drexel University College of Computing & Informatics, Sep 2025 -  Present</p>
+                    </div>
+                </div>
+                <div className="item">
+                    <Briefcase className="icon" size={20} />
+                    <div className="content">
+                        <h3>AI Software Engineer Sprintern</h3>
                         <p className="subtitle">ASAPP, August 2025 -  Present</p>
                     </div>
                 </div>
@@ -52,14 +69,14 @@ const Resume = () => {
                     <Briefcase className="icon" size={20} />
                     <div className="content">
                         <h3>AI/ML Fellow</h3>
-                        <p className="subtitle">Cornell Tech (Break Through Tech AI Program), April 2025 -  Present</p>
+                        <p className="subtitle">Cornell Tech (Break Through Tech AI Program), Apr 2025 -  Aug 2025</p>
                     </div>
                 </div>
                 <div className="item">
                     <Briefcase className="icon" size={20} />
                     <div className="content">
-                        <h3>AI Researcher</h3>
-                        <p className="subtitle">Drexel University College of Computing & Informatics, April 2025 -  Present</p>
+                        <h3>AI Research Co-op</h3>
+                        <p className="subtitle">Drexel University College of Computing & Informatics, Apr 2025 -  Sep 2025</p>
                     </div>
                 </div>
                 <div className="item">
