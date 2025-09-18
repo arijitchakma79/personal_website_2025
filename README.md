@@ -16,7 +16,7 @@ This is my personal website featuring:
 - **Styling**: CSS3 with modern responsive design
 - **Icons**: Lucide React
 - **Build Tool**: Create React App
-- **Deployment**: [Add your deployment platform here]
+- **Deployment**: Github Pages
 
 ## 📋 Features
 
@@ -84,9 +84,9 @@ src/
 
 ## 📞 Contact
 
-- **Email**: [Your email]
-- **LinkedIn**: [Your LinkedIn profile]
-- **GitHub**: [Your GitHub profile]
+- **Email**: ac4393@drexel.edu
+- **LinkedIn**: https://www.linkedin.com/in/arijitchakma/ 
+- **GitHub**: https://github.com/arijitchakma79
 
 ## 📄 License
 
