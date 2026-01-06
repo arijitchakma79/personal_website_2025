@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Home, FileText, Boxes,  Instagram, Linkedin, Github, Menu, X } from 'lucide-react';
+import { Home, FileText, Boxes, Palette, Instagram, Linkedin, Github, Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 import profileImg from '../assets/profile_pic.JPG';
 import '../styles/sidebar.css';
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { theme, toggleTheme } = useTheme();
 
     const navLinks = [
         { path: '/', icon: <Home size={20} />, text: 'Home' },
         { path: '/resume', icon: <FileText size={20} />, text: 'Resume' },
-        { path: '/projects', icon: <Boxes size={20} />, text: 'Projects' }
+        { path: '/projects', icon: <Boxes size={20} />, text: 'Projects' },
+        { path: '/hobbies', icon: <Palette size={20} />, text: 'Hobbies' }
     ];
 
     const socialLinks = [
@@ -52,6 +55,14 @@ const Sidebar = () => {
                             <span className="nav-text">{link.text}</span>
                         </NavLink>
                     ))}
+                    <button 
+                        className="nav-link theme-toggle-link" 
+                        onClick={toggleTheme}
+                        aria-label="Toggle theme"
+                    >
+                        {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                        <span className="nav-text">{theme === 'dark' ? 'Light' : 'Dark'}</span>
+                    </button>
                 </div>
 
                 <div className="social-links">

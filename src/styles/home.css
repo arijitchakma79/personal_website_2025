@@ -1,13 +1,11 @@
 /* Home.css */
-:root {
-    --primary-bg: #000000;
-}
-
 .home {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     overflow-x: hidden;
+    background-color: var(--primary-bg);
+    transition: background-color 0.3s ease;
 }
 
 /* Intro Section */
@@ -16,38 +14,74 @@
     width: 100%;
 }
 
-.intro h1 {
+.intro-name {
     font-size: 48px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #ffffff;
+    color: var(--text-primary);
     word-wrap: break-word;
+    transition: color 0.3s ease;
+}
+
+.intro-typewriter {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 500;
+    margin-bottom: 60px;
+    color: var(--text-primary);
+    word-wrap: break-word;
+    transition: color 0.3s ease;
+    min-height: 40px;
+}
+
+.typewriter-text {
+    display: inline-block;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    color: var(--accent-red);
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
 }
 
 .subtitle {
     font-size: 20px;
-    color: #999999;
+    color: var(--text-secondary);
     margin-bottom: 30px;
     word-wrap: break-word;
+    transition: color 0.3s ease;
 }
 
 .bio {
     font-size: 16px;
-    line-height: 1.6;
-    color: #999999;
+    line-height: 1.8;
+    color: var(--text-secondary);
     max-width: 100%;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
 
 .bio b {
-    color: #ffffff;
+    color: var(--text-primary);
     font-weight: 600;
 }
 
 .bio p {
     margin-bottom: 20px;
     max-width: 100%;
+}
+
+.bio .email-paragraph {
+    margin-top: 32px;
 }
 
 .bio ul {
@@ -65,22 +99,25 @@
 
 .bio li::before {
     content: "•";
-    color: #999999;
+    color: var(--accent-red);
     position: absolute;
     left: -15px;
+    font-size: 20px;
 }
 
 .bio a,
 .email-link {
-    color: #ffffff;
+    color: var(--text-primary);
     text-decoration: none;
     transition: color 0.3s ease;
     word-wrap: break-word;
+    border-bottom: 1px solid transparent;
 }
 
 .bio a:hover,
 .email-link:hover {
-    color: #ff6b6b;
+    color: var(--accent-red);
+    border-bottom-color: var(--accent-red);
 }
 
 /* Snapshots Section */
@@ -93,7 +130,8 @@
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 100px;
-    color: #ffffff;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
 }
 
 .scroll-container {
@@ -115,13 +153,13 @@
 
 .scroll-container::before {
     left: 0;
-    background: linear-gradient(to right, #000000 0%, transparent 100%);
+    background: linear-gradient(to right, var(--primary-bg) 0%, transparent 100%);
     opacity: 0.3;
 }
 
 .scroll-container::after {
     right: 0;
-    background: linear-gradient(to left, #000000 0%, transparent 100%);
+    background: linear-gradient(to left, var(--primary-bg) 0%, transparent 100%);
     opacity: 0.3;
 }
 

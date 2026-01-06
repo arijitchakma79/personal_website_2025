@@ -2,16 +2,21 @@ import React from 'react';
 import { GraduationCap, Briefcase, Award, FileText } from 'lucide-react';
 import '../styles/resume.css';
 import logo from "../assets/drexel_logo.png"
-import resumePDF from "../assets/resume.pdf"
-
+import drexelCciResearchLogo from "../assets/drexel_cci_research_logo.jpg"
+import assapLogo from "../assets/assap.jpg"
+import bmsLogo from "../assets/BMS.png"
+import developForGoodLogo from "../assets/develop_for_good_logo.jpg"
+import drexelCCILogo from "../assets/drexel_cci.jpg"
+import kbraLogo from '../assets/kbra.jpg'
 
 const Resume = () => {
     return (
-        <div className="resume">
+        <div className="resume-container">
+            <div className="resume">
             <div className="resume-header">
                 <h1>RESUME</h1>
                 <a 
-                    href={resumePDF}
+                    href="https://drive.google.com/drive/folders/1y-MUB9luMH3jtbl1PI1W__xDFSkVz_eA?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="resume-button"
@@ -32,7 +37,7 @@ const Resume = () => {
                         <h3>Bachelors in Computer Science</h3>
                         <p className="subtitle">Drexel University, 2027</p>
                     </div>
-                    <img src={logo} alt="Drexel" className="company-logo" />
+                    <img src={logo} alt="Drexel" className="company-logo-small" />
                 </div>
             </section>
             
@@ -40,9 +45,9 @@ const Resume = () => {
             <section className="resume-section">
                 <h2>Publications</h2>
                 <div className="item">
-                    <GraduationCap className="icon" size={20} />
+                    <FileText className="icon" size={20} />
                     <div className="content">
-                        <h3>NGSS-DrawSim: AI-Generated Student Science Drawings for Teacher Assessment and Professional Development</h3>
+                        <h3>DrawSim-PD: Generating NGSS-Aligned Student-Like Drawings for Teacher Diagnostic Training</h3>
                         <p className="subtitle">Arijit Chakma, Peng He, Tingting Li, Tiffany D. Do, and Feng Liu. Under review.</p>
                     </div>
                 </div>
@@ -54,44 +59,46 @@ const Resume = () => {
                 <div className="item">
                     <Briefcase className="icon" size={20} />
                     <div className="content">
-                        <h3>Teaching Assistant</h3>
+                        <h3>Incoming Software Engineer Intern</h3>
+                        <p className="subtitle">KBRA, Apr 2026 -  September 2026</p>
+                    </div>
+                    <img src={kbraLogo} alt="KBRA" className="company-logo-small" />
+                </div>
+                <div className="item">
+                    <Briefcase className="icon" size={20} />
+                    <div className="content">
+                        <h3>Undergradudate Researcher</h3>
+                        <p className="subtitle">
+                            <a href="https://vilab-group.com/" target="_blank" rel="noopener noreferrer" className="resume-link">
+                                Visual Intelligence Lab
+                            </a>, Apr 2025 -  Present
+                        </p>
+                    </div>
+                    <img src={drexelCciResearchLogo} alt="Drexel CCI Research" className="company-logo-small" />
+                </div>
+                <div className="item">
+                    <Briefcase className="icon" size={20} />
+                    <div className="content">
+                        <h3>Course Assistant</h3>
                         <p className="subtitle">Drexel University College of Computing & Informatics, Sep 2025 -  Present</p>
                     </div>
+                    <img src={drexelCCILogo} alt="Drexel CCI" className="company-logo-small" />
                 </div>
                 <div className="item">
                     <Briefcase className="icon" size={20} />
                     <div className="content">
-                        <h3>AI Software Engineer Sprintern</h3>
-                        <p className="subtitle">ASAPP, August 2025 -  Present</p>
+                        <h3>AI Engineer Sprintern</h3>
+                        <p className="subtitle">ASAPP, August 2025 - November 2025</p>
                     </div>
+                    <img src={assapLogo} alt="ASAPP" className="company-logo-small" />
                 </div>
                 <div className="item">
                     <Briefcase className="icon" size={20} />
                     <div className="content">
-                        <h3>AI/ML Fellow</h3>
-                        <p className="subtitle">Cornell Tech (Break Through Tech AI Program), Apr 2025 -  Aug 2025</p>
-                    </div>
-                </div>
-                <div className="item">
-                    <Briefcase className="icon" size={20} />
-                    <div className="content">
-                        <h3>AI Research Co-op</h3>
-                        <p className="subtitle">Drexel University College of Computing & Informatics, Apr 2025 -  Sep 2025</p>
-                    </div>
-                </div>
-                <div className="item">
-                    <Briefcase className="icon" size={20} />
-                    <div className="content">
-                        <h3>UG Researcher</h3>
-                        <p className="subtitle">Drexel University College of Engineering, Sep 2024 - Mar 2025</p>
-                    </div>
-                </div>
-                <div className="item">
-                    <Briefcase className="icon" size={20} />
-                    <div className="content">
-                        <h3>Cloud and Software Engineer</h3>
+                        <h3>Software Engineer Intern</h3>
                         <p className="subtitle">Bristol Myers Squibb, Apr 2024 - Sep 2024</p>
                     </div>
+                    <img src={bmsLogo} alt="Bristol Myers Squibb" className="company-logo" />
                 </div>
                 <div className="item">
                     <Briefcase className="icon" size={20} />
@@ -99,31 +106,14 @@ const Resume = () => {
                         <h3>Software Engineer</h3>
                         <p className="subtitle">Develop For Good, May 2024 - Aug 2024</p>
                     </div>
+                    <img src={developForGoodLogo} alt="Develop For Good" className="company-logo-small" />
                 </div>
             </section>
 
-            {/* Leadership Section */}
-            <section className="resume-section">
-                <h2>Leadership</h2>
-                <div className="item">
-                    <Briefcase className="icon" size={20} />
-                    <div className="content">
-                        <h3>Event Coordinator</h3>
-                        <p className="subtitle">Drexel Society of Artificial Intelligance, May 2023 - Apr 2024</p>
-                    </div>
-                </div>
-                <div className="item">
-                    <Briefcase className="icon" size={20} />
-                    <div className="content">
-                        <h3>Operational Strategist</h3>
-                        <p className="subtitle">IndeSearch, May 2022 - June 2023</p>
-                    </div>
-                </div>
-            </section>
-
+        
             {/* Awards Section */}
             <section className="resume-section">
-                <h2>Awards & Achievements</h2>
+                <h2>Awards & Honors</h2>
                 <div className="item">
                     <Award className="icon" size={20} />
                     <div className="content">
@@ -188,6 +178,7 @@ const Resume = () => {
                     </div>
                 </div>
             </section>
+            </div>
         </div>
     );
 };

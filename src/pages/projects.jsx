@@ -9,10 +9,19 @@ import visualed from '../assets/visualed.jpg';
 import soundshield from '../assets/soundshield.jpg';
 import thrifthub from '../assets/thrifthub.jpg'
 import ventureahead from '../assets/ventureahead.png';
-import woundwatch from '../assets/woundWatch.png'
+import woundwatch from '../assets/woundWatch.png';
+import collegebuddy from '../assets/collegebuddy.png';
 
 const Projects = () => {
     const projects = [
+        {
+            title: "CollegeBuddy",
+            description: "Your all-in-one platform for campus connections, organizations, and events. College Buddy helps students discover and join campus organizations, stay connected with events, and build their campus community.",
+            category: "Technical",
+            image: collegebuddy,
+            icon: <Globe size={20} />,
+            link: "https://github.com/arijitchakma79/CollegeBuddy",
+        },
         {
             title: "WoundWatch",
             description: "an AI-powered app to reconstruct 3D wound models from 2D images using depth estimation and segmentation,supporting real-time clinical analysis and supporting remote healthcare for patients.",

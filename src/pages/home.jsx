@@ -1,52 +1,66 @@
 import React from 'react';
+import Typewriter from '../components/Typewriter';
 import '../styles/home.css';
 
 const Home = () => {
+    const typewriterPhrases = [
+        "I am a Researcher",
+        "I am a Software Engineer",
+        "I like History"
+    ];
+
     return (
         <div className="home">
             {/* Intro Section */}
             <section className="intro">
-                <h1>Hi, I'm Ariji</h1>
-                <p className="subtitle">Software Engineer | AI Engineer & Researcher</p>
+                <h1 className="intro-name">Hi, I am Ariji</h1>
+                <h3 className="intro-typewriter">
+                    <Typewriter
+                        phrases={typewriterPhrases}
+                        typingSpeed={100}
+                        deletingSpeed={50}
+                        pauseTime={2000}
+                    />
+                </h3>
 
                 <div className="bio">
                     <p>
-                        I'm a Junior Computer Science student at Drexel University, focusing on 
-                        <b> Software Engineering, Deep Learning, Computer Vision, and Multimodal LLMs</b>.  
-                        I’m passionate about designing scalable AI systems and applying cutting-edge research 
-                        to solve real-world problems. My experience spans full-stack development, LLMs, MCP workflows, 
-                        vision-based deep learning models, and diffusion models.
+                        I’m a junior Computer Science student at Drexel University with research interests in 
+                        3D Computer Vision, Controllable Image Generation, Applied LLMs, and 
+                        Human–AI Interaction (HAI). I’m a long-time developer with experience across the Full Stack, as well as in 
+                        IoT (Arduino & Raspberry Pi), agentic workflows, and Model Context Protocols (MCPs). 
+                        I enjoy building systems end-to-end, from low-level hardware integrations to high-level intelligent agents.
                     </p>
 
                     <p>
-                        Outside of academics, I enjoy working out, discovering new restaurants, and 
-                        continuously expanding my knowledge. I also love hackathons — I’ve participated in 
-                        around <b>11</b> so far, including events at MIT, Columbia, UPenn, JHU, and Princeton.
+                        Outside of academics, I enjoy working out, exploring new restaurants, and learning across a wide 
+                        range of topics, including medieval European history, geopolitics, game theory, and psychology. 
+                        I’m also an avid hackathon participant, having competed in approximately 15 events, 
+                        including hackathons at MIT, Columbia, UPenn, Johns Hopkins, and Princeton.
                     </p>
 
                     <p>Currently, I am:</p>
                     <ul>
                         <li>
-                            Actively seeking <b>SWE / ML / AI</b> positions for Spring/Summer <b>2026</b>.
+                            Taking winter courses, including Computational Photography and 
+                            Augmented Programming.
                         </li>
                         <li>
-                            Taking Fall 2025 courses, including <b>Computer Graphics</b> and 
-                            <b> Optimization Theory</b>.
+                            Working on a research project in controllable image generation.
                         </li>
                         <li>
-                            Working on a research project that uses LLMs for planning and 
-                            diffusion models for generating scientific diagrams.
+                            Developing a Linear Programming Simplex Algorithm visualizer.
                         </li>
                     </ul>
 
-                    <p>
+                    <p className="email-paragraph">
                         Feel free to reach out at{" "}
                         <a href="mailto:ac4393@drexel.edu" className="email-link">
                             ac4393@drexel.edu
-                        </a>
-                        .
+                        </a>.
                     </p>
                 </div>
+
             </section>
         </div>
     );

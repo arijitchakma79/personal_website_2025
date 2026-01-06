@@ -1,12 +1,34 @@
 :root {
+  --sidebar-width: 240px;
+  --sidebar-mobile-width: 60px;
+}
+
+/* Dark Theme (Default) */
+[data-theme="dark"] {
   --primary-bg: #000000;
+  --secondary-bg: #111111;
   --sidebar-bg: #111111;
   --text-primary: #ffffff;
   --text-secondary: #999999;
   --accent-color: #666666;
   --hover-color: #333333;
-  --sidebar-width: 240px;
-  --sidebar-mobile-width: 60px;
+  --border-color: #333333;
+  --card-bg: #1a1a1a;
+  --accent-red: #ff6b6b;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --primary-bg: #ffffff;
+  --secondary-bg: #f5f5f5;
+  --sidebar-bg: #f8f8f8;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --accent-color: #999999;
+  --hover-color: #e0e0e0;
+  --border-color: #e0e0e0;
+  --card-bg: #ffffff;
+  --accent-red: #ff6b6b;
 }
 
 /* Reset Styles */
@@ -16,19 +38,67 @@
   box-sizing: border-box;
 }
 
+/* HTML and Body - scrollbar on left */
+html {
+  direction: rtl;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 /* Body */
 body {
   background-color: var(--primary-bg);
   color: var(--text-primary);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   overflow-x: hidden;
+  overflow-y: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  height: 100vh;
+  direction: rtl; /* Move scrollbar to left */
+}
+
+/* Reset direction for all content */
+.app,
+.main-content,
+.resume,
+.home,
+.projects,
+.sidebar,
+.footer {
+  direction: ltr;
+}
+
+/* Custom Scrollbar Styling - Left Side */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-red);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent;
 }
 
 /* App Layout */
 .app {
   display: flex;
   flex-direction: column; /* Ensures the main-content & footer are stacked */
-  min-height: 100vh; /* Makes sure the footer is pushed to the bottom */
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* Sidebar */
@@ -43,6 +113,8 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 1000;
+  transition: background-color 0.3s ease;
+  border-right: 1px solid var(--border-color);
 }
 
 /* Main Content */
@@ -53,8 +125,13 @@ body {
   width: calc(100% - var(--sidebar-width));
   max-width: calc(100% - var(--sidebar-width));
   overflow-x: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  background-color: var(--primary-bg);
+  transition: background-color 0.3s ease;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 /* Navigation Links */
@@ -71,18 +148,20 @@ body {
   padding: 0.75rem 1rem;
   color: var(--text-secondary);
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .nav-link:hover {
   background-color: var(--hover-color);
   color: var(--text-primary);
+  transform: translateX(4px);
 }
 
 .nav-link.active {
   background-color: var(--hover-color);
   color: var(--text-primary);
+  border-left: 3px solid var(--accent-red);
 }
 
 /* Social Links */
@@ -122,11 +201,13 @@ body {
 .footer {
   text-align: center;
   padding: 20px;
-  background-color: var(--primary-bg); /* Same as sidebar */
+  background-color: var(--primary-bg);
   color: var(--text-secondary);
   font-size: 14px;
   width: 100%;
   margin-top: auto; /* Pushes footer to bottom */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-links {
@@ -193,7 +274,7 @@ body {
     margin-left: 0;
     width: 100%;
     max-width: 100%;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     padding-top: 4rem;
   }
 
