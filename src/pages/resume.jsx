@@ -25,9 +25,6 @@ const Resume = () => {
                     <span>View Full Resume</span>
                 </a>
             </div>
-
-            <p className="subtitle">Looking for SWE Intern/Co-op positions for Summer 26</p>
-
             {/* Education Section */}
             <section className="resume-section">
                 <h2>Education</h2>
@@ -41,7 +38,7 @@ const Resume = () => {
                 </div>
             </section>
             
-            {/* Education Section */}
+            {/* Publications Section */}
             <section className="resume-section">
                 <h2>Publications</h2>
                 <div className="item">
@@ -60,7 +57,7 @@ const Resume = () => {
                     <Briefcase className="icon" size={20} />
                     <div className="content">
                         <h3>Incoming Software Engineer Intern</h3>
-                        <p className="subtitle">KBRA, Apr 2026 -  September 2026</p>
+                        <p className="subtitle">KBRA, April 2026 -  September 2026</p>
                     </div>
                     <img src={kbraLogo} alt="KBRA" className="company-logo-small" />
                 </div>
@@ -71,7 +68,7 @@ const Resume = () => {
                         <p className="subtitle">
                             <a href="https://vilab-group.com/" target="_blank" rel="noopener noreferrer" className="resume-link">
                                 Visual Intelligence Lab
-                            </a>, Apr 2025 -  Present
+                            </a>, April 2025 -  Present
                         </p>
                     </div>
                     <img src={drexelCciResearchLogo} alt="Drexel CCI Research" className="company-logo-small" />
@@ -80,7 +77,7 @@ const Resume = () => {
                     <Briefcase className="icon" size={20} />
                     <div className="content">
                         <h3>Course Assistant</h3>
-                        <p className="subtitle">Drexel University College of Computing & Informatics, Sep 2025 -  Present</p>
+                        <p className="subtitle">Drexel University College of Computing & Informatics, September 2025 -  Present</p>
                     </div>
                     <img src={drexelCCILogo} alt="Drexel CCI" className="company-logo-small" />
                 </div>
@@ -96,7 +93,7 @@ const Resume = () => {
                     <Briefcase className="icon" size={20} />
                     <div className="content">
                         <h3>Software Engineer Intern</h3>
-                        <p className="subtitle">Bristol Myers Squibb, Apr 2024 - Sep 2024</p>
+                        <p className="subtitle">Bristol Myers Squibb, April 2024 - September 2024</p>
                     </div>
                     <img src={bmsLogo} alt="Bristol Myers Squibb" className="company-logo" />
                 </div>
@@ -104,7 +101,7 @@ const Resume = () => {
                     <Briefcase className="icon" size={20} />
                     <div className="content">
                         <h3>Software Engineer</h3>
-                        <p className="subtitle">Develop For Good, May 2024 - Aug 2024</p>
+                        <p className="subtitle">Develop For Good, May 2024 - August 2024</p>
                     </div>
                     <img src={developForGoodLogo} alt="Develop For Good" className="company-logo-small" />
                 </div>

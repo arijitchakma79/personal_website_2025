@@ -5,8 +5,8 @@ import '../styles/home.css';
 const Home = () => {
     const typewriterPhrases = [
         "I am a Researcher",
-        "I am a Software Engineer",
-        "I like History"
+        "I am a Software engineer",
+        "I like reading about history"
     ];
 
     return (
@@ -50,6 +50,9 @@ const Home = () => {
                         </li>
                         <li>
                             Developing a Linear Programming Simplex Algorithm visualizer.
+                        </li>
+                        <li>
+                            Learning Mandarin.
                         </li>
                     </ul>
 
