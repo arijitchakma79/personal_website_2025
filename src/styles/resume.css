@@ -4,14 +4,14 @@
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 2rem;
+    padding: 0; /* match home/projects outer container */
     box-sizing: border-box;
 }
 
 .resume {
-    max-width: 1000px;
+    max-width: 1200px; /* align with home/projects width */
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 0 20px; /* consistent left/right margin inside main-content */
     color: var(--text-primary);
     background-color: var(--primary-bg);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -19,11 +19,13 @@
 }
 
 .resume h1 {
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: bold;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 600;
     margin-bottom: 10px;
     color: var(--text-primary);
     transition: color 0.3s ease;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
 }
 
 .resume .subtitle {
@@ -38,12 +40,15 @@
 }
 
 .resume-section h2 {
-    font-size: clamp(24px, 4vw, 32px);
-    margin-bottom: 25px;
-    color: var(--text-primary);
+    font-size: clamp(18px, 2.5vw, 22px);
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     transition: color 0.3s ease;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
 }
 
 .section-header-with-logo {
@@ -70,10 +75,52 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
-    height: 3px;
+    width: 24px;
+    height: 2px;
     background-color: var(--accent-red);
     transition: background-color 0.3s ease;
+    border-radius: 1px;
+}
+
+.resume-section-note {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+}
+
+.misc-intro {
+    font-size: clamp(14px, 2vw, 16px);
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+}
+
+.misc-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    margin-left: 1.5rem;
+}
+
+.misc-list li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-size: clamp(14px, 2vw, 16px);
+    text-transform: lowercase;
+    letter-spacing: 0.01em;
+}
+
+.misc-list li::before {
+    content: "•";
+    color: var(--accent-red);
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
 }
 
 /* Add to your resume.css */
@@ -88,20 +135,24 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 20px;
-    background-color: var(--accent-red);
-    color: white;
-    border-radius: 8px;
+    padding: 10px 18px;
+    background-color: transparent;
+    color: var(--accent-red);
+    border: 1.5px solid var(--accent-red);
+    border-radius: 999px;
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+    font-size: 14px;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    transition: all 0.25s ease;
 }
 
 .resume-button:hover {
-    background-color: #ff8787;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+    background-color: var(--accent-red);
+    color: var(--primary-bg);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.25);
 }
 
 .resume-button svg {
@@ -128,15 +179,18 @@
 
 .item {
     display: flex;
-    align-items: center; /* Changed to center for better alignment */
-    margin-bottom: 25px;
-    gap: 15px;
-    padding: 15px;
-    transition: all 0.3s ease;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 16px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    border-left: 3px solid transparent;
+    transition: all 0.25s ease;
 }
 
 .item:hover {
     background-color: var(--hover-color);
+    border-left-color: var(--accent-red);
 }
 
 .clickable-item {
@@ -144,8 +198,12 @@
     position: relative;
 }
 
+.publication-item:hover {
+    border-left-color: var(--accent-red);
+}
+
 .clickable-item:hover {
-    transform: translateX(5px);
+    transform: translateX(4px);
 }
 
 .additional-info {
@@ -186,10 +244,13 @@
 }
 
 .content h3 {
-    font-size: clamp(16px, 2.5vw, 20px);
-    margin-bottom: 5px;
+    font-size: clamp(15px, 2.2vw, 18px);
+    font-weight: 600;
+    margin-bottom: 4px;
     color: var(--text-primary);
     transition: color 0.3s ease;
+    text-transform: lowercase;
+    letter-spacing: 0.01em;
 }
 
 .content .subtitle {
@@ -241,6 +302,52 @@
 .item:hover .company-logo,
 .item:hover .company-logo-small {
     transform: scale(1.05);
+}
+
+.publication-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Publication: normal capitalization (not lowercase) */
+.publication-card-link .publication-title,
+.publication-card-link .publication-title:hover {
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.publication-link {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-red);
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+.publication-item {
+    align-items: flex-start;
+}
+
+.publication-image {
+    width: 220px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .publication-item {
+        flex-direction: column;
+    }
+
+    .publication-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 12px;
+    }
 }
 
 /* Tablet Styles */

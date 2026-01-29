@@ -1,9 +1,21 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home, Resume, Projects, Hobbies } from './pages';
-import { Sidebar, Footer } from './components'; // Import Footer
+import { Home, Hobbies } from './pages';
+import { Sidebar, Footer } from './components';
 import { ThemeProvider } from './contexts/ThemeContext';
 import './styles/App.css';
+
+const MainPage = () => (
+  <main className="main-content">
+    <Home />
+  </main>
+);
+
+const HobbiesPage = () => (
+  <main className="main-content">
+    <Hobbies />
+  </main>
+);
 
 const App = () => {
   return (
@@ -11,15 +23,11 @@ const App = () => {
       <Router>
         <div className="app">
           <Sidebar />
-          <main className="main-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/hobbies" element={<Hobbies />} />
-            </Routes>
-          </main>
-          <Footer /> {/* Ensure Footer is outside .main-content */}
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/hobbies" element={<HobbiesPage />} />
+          </Routes>
+          <Footer />
         </div>
       </Router>
     </ThemeProvider>

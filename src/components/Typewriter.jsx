@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
+// Split string by Unicode code points (keeps emojis as single "characters")
+const toSegments = (str) => [...str];
+
 const Typewriter = ({ phrases, typingSpeed = 100, deletingSpeed = 50, pauseTime = 2000 }) => {
     const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-    const [currentText, setCurrentText] = useState('');
+    const [displayIndex, setDisplayIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
 
+    const currentPhrase = phrases[currentPhraseIndex] ?? '';
+    const segments = toSegments(currentPhrase);
+    const currentText = segments.slice(0, displayIndex).join('');
+
     useEffect(() => {
-        const currentPhrase = phrases[currentPhraseIndex];
-        
         if (isPaused) {
             const pauseTimer = setTimeout(() => {
                 setIsPaused(false);
@@ -18,26 +23,26 @@ const Typewriter = ({ phrases, typingSpeed = 100, deletingSpeed = 50, pauseTime 
         }
 
         if (isDeleting) {
-            if (currentText === '') {
+            if (displayIndex === 0) {
                 setIsDeleting(false);
                 setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
             } else {
                 const timer = setTimeout(() => {
-                    setCurrentText((prev) => prev.slice(0, -1));
+                    setDisplayIndex((prev) => prev - 1);
                 }, deletingSpeed);
                 return () => clearTimeout(timer);
             }
         } else {
-            if (currentText === currentPhrase) {
+            if (displayIndex === segments.length) {
                 setIsPaused(true);
             } else {
                 const timer = setTimeout(() => {
-                    setCurrentText((prev) => currentPhrase.slice(0, prev.length + 1));
+                    setDisplayIndex((prev) => prev + 1);
                 }, typingSpeed);
                 return () => clearTimeout(timer);
             }
         }
-    }, [currentText, isDeleting, isPaused, currentPhraseIndex, phrases, typingSpeed, deletingSpeed, pauseTime]);
+    }, [displayIndex, isDeleting, isPaused, currentPhraseIndex, phrases, typingSpeed, deletingSpeed, pauseTime, segments.length]);
 
     return (
         <span className="typewriter-text">

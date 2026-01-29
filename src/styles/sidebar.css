@@ -47,24 +47,39 @@
 .nav-link {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     padding: 12px 15px;
     text-decoration: none;
     color: var(--text-secondary);
-    border-radius: 8px;
+    border-radius: 999px; /* pill shape */
     transition: all 0.3s ease;
     font-weight: 500;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
 }
 
 .nav-link:hover {
     background-color: var(--hover-color);
     color: var(--text-primary);
-    transform: translateX(4px);
 }
 
 .nav-link.active {
     background-color: var(--hover-color);
     color: var(--text-primary);
-    border-left: 3px solid var(--accent-red);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.nav-link.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 3px;
+    border-radius: 999px;
+    background-color: var(--accent-red);
 }
 
 .nav-link svg {

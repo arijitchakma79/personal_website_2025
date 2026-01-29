@@ -2,7 +2,7 @@
 .home {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px; /* consistent left/right margin inside main-content */
     overflow-x: hidden;
     background-color: var(--primary-bg);
     transition: background-color 0.3s ease;
@@ -193,13 +193,6 @@
     }
     100% {
         transform: translateX(-50%);
-    }
-}
-
-/* Large screens */
-@media (min-width: 1400px) {
-    .home {
-        max-width: 1400px;
     }
 }
 
