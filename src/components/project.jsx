@@ -11,9 +11,19 @@ import thrifthub from '../assets/thrifthub.jpg';
 import ventureahead from '../assets/ventureahead.png';
 import woundwatch from '../assets/woundWatch.png';
 import collegebuddy from '../assets/collegebuddy.png';
+import carbon0 from '../assets/carbon0.png'
 
 const Projects = () => {
   const projects = [
+    {
+      title: 'Carbon0',
+      description:
+        'A Chrome extension that empowers online shoppers to make eco-conscious choices by analyzing product carbon footprints in real time and suggesting greener alternatives.',
+      category: 'Technical',
+      image: carbon0,
+      icon: <Globe size={20} />,
+      link: 'https://devpost.com/software/carbon0-0brfc1',
+    },
     {
       title: 'CollegeBuddy',
       description:
