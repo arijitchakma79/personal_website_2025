@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.9ad1c078.css",
-    "main.js": "/static/js/main.54d37c9e.js",
+    "main.css": "/static/css/main.954c81a0.css",
+    "main.js": "/static/js/main.3ac71c8f.js",
     "static/media/skyhigh.jpg": "/static/media/skyhigh.f05e66e395007ae198d8.jpg",
     "static/media/collegebuddy.png": "/static/media/collegebuddy.2caed738b796ec573584.png",
     "static/media/profile_pic.JPG": "/static/media/profile_pic.926e4cb62da9a14977c0.JPG",
+    "static/media/drawsim-pd": "/static/media/drawsim-pd.f62cadf53978e1a5a547",
     "static/media/scout.jpg": "/static/media/scout.944b87110d080a3ff180.jpg",
     "static/media/thrifthub.jpg": "/static/media/thrifthub.191a4c6a472559b93fb4.jpg",
     "static/media/ventureahead.png": "/static/media/ventureahead.7adae8dc24963d07d574.png",
@@ -18,11 +19,11 @@
     "static/media/drexel_cci_research_logo.jpg": "/static/media/drexel_cci_research_logo.4a30e4ae6df1d6c1ce82.jpg",
     "static/media/BMS.png": "/static/media/BMS.1cdd14b2f73194e463f4.png",
     "index.html": "/index.html",
-    "main.9ad1c078.css.map": "/static/css/main.9ad1c078.css.map",
-    "main.54d37c9e.js.map": "/static/js/main.54d37c9e.js.map"
+    "main.954c81a0.css.map": "/static/css/main.954c81a0.css.map",
+    "main.3ac71c8f.js.map": "/static/js/main.3ac71c8f.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ad1c078.css",
-    "static/js/main.54d37c9e.js"
+    "static/css/main.954c81a0.css",
+    "static/js/main.3ac71c8f.js"
   ]
 }
