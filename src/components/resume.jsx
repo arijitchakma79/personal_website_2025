@@ -41,7 +41,7 @@ const Resume = () => {
       {/* Favourite Courses Section */}
       <section className="resume-section">
         <h2>some favourite courses</h2>
-        <p className="resume-section-note">* grad level. listed in no particular order.</p>
+        <p className="resume-section-note">* indicates grad level. listed in no particular order.</p>
         <div className="item">
           <BookOpen className="icon" size={20} />
           <div className="content">
