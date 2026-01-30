@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Briefcase, Award, FileText, BookOpen } from 'lucide-react';
+import { GraduationCap, Briefcase, Award, FileText, BookOpen, Languages, Dumbbell, ScrollText } from 'lucide-react';
 import '../styles/resume.css';
 import logo from '../assets/drexel_logo.png';
 import drexelCciResearchLogo from '../assets/drexel_cci_research_logo.jpg';
@@ -235,13 +235,28 @@ const Resume = () => {
       </section>
 
       {/* Miscellaneous Section */}
-      <section className="resume-section">
+      <section className="resume-section misc-section">
         <h2>miscellaneous</h2>
-        <ul className="misc-list">
-          <li>i'm learning chinese</li>
-          <li>i love working out</li>
-          <li>i love ancient history</li>
-        </ul>
+        <div className="misc-grid">
+          <div className="misc-card">
+            <div className="misc-card-icon">
+              <Languages size={20} />
+            </div>
+            <span>i'm learning chinese</span>
+          </div>
+          <div className="misc-card">
+            <div className="misc-card-icon">
+              <Dumbbell size={20} />
+            </div>
+            <span>i love working out</span>
+          </div>
+          <div className="misc-card">
+            <div className="misc-card-icon">
+              <ScrollText size={20} />
+            </div>
+            <span>i love ancient history</span>
+          </div>
+        </div>
       </section>
     </div>
   );

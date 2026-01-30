@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
-import { Home, FileText, Boxes, Palette, Instagram, Linkedin, Github, Twitter, Menu, X, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
+import { Home, FileText, Boxes, Palette, Instagram, Linkedin, Github, Twitter, Menu, X, Sun, Moon, Check } from 'lucide-react';
+import { useTheme, ACCENT_OPTIONS } from '../contexts/ThemeContext';
 import profileImg from '../assets/profile_pic.JPG';
 import '../styles/sidebar.css';
+
+const VIBES_VISIBLE_COUNT = 3;
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('about-section');
+    const [showAllVibes, setShowAllVibes] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
-    const { theme, toggleTheme } = useTheme();
+    const { theme, toggleTheme, accent, setAccent } = useTheme();
 
     const navLinks = [
         { id: 'about-section', icon: <Home size={20} />, text: 'about' },
@@ -33,6 +36,20 @@ const Sidebar = () => {
         setIsOpen(false);
     };
 
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') closeMenu();
+        };
+        if (isOpen) {
+            document.addEventListener('keydown', handleEscape);
+            document.body.style.overflow = 'hidden';
+        }
+        return () => {
+            document.removeEventListener('keydown', handleEscape);
+            document.body.style.overflow = '';
+        };
+    }, [isOpen]);
+
     const scrollToSection = (sectionId) => {
         const performScroll = () => {
             const section = document.getElementById(sectionId);
@@ -54,11 +71,26 @@ const Sidebar = () => {
 
     return (
         <>
-            <button className="mobile-menu-btn" onClick={toggleMenu}>
+            <button
+                className={`mobile-menu-btn ${isOpen ? 'open' : ''}`}
+                onClick={toggleMenu}
+                aria-expanded={isOpen}
+                aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
+            <div
+                className={`sidebar-overlay ${isOpen ? 'visible' : ''}`}
+                onClick={closeMenu}
+                role="presentation"
+                aria-hidden={!isOpen}
+            />
+
             <nav className={`sidebar ${isOpen ? 'open' : ''}`}>
+                <div className="sidebar-mobile-header">
+                    <span className="sidebar-mobile-title">Menu</span>
+                </div>
                 <div className="profile-image-container">
                     <img src={profileImg} alt="Profile" className="profile-image" />
                 </div>
@@ -95,6 +127,47 @@ const Sidebar = () => {
                         {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                         <span className="nav-text">{theme === 'dark' ? 'light' : 'dark'}</span>
                     </button>
+                    <div className="accent-picker nav-link-size">
+                        <span className="accent-picker-label">✨ theme</span>
+                        <div className="accent-picker-body">
+                            <div className="accent-swatches">
+                                {ACCENT_OPTIONS.slice(0, VIBES_VISIBLE_COUNT).map((opt) => (
+                                    <button
+                                        key={opt.id}
+                                        type="button"
+                                        className={`accent-swatch ${accent === opt.id ? 'active' : ''}`}
+                                        style={{ backgroundColor: opt.color }}
+                                        onClick={() => setAccent(opt.id)}
+                                        aria-label={`Accent color: ${opt.name}`}
+                                        title={opt.name}
+                                    >
+                                        {accent === opt.id && <Check size={10} strokeWidth={3} className="accent-swatch-check" />}
+                                    </button>
+                                ))}
+                                <button
+                                    type="button"
+                                    className="accent-see-more"
+                                    onClick={() => setShowAllVibes((v) => !v)}
+                                    aria-expanded={showAllVibes}
+                                >
+                                    {showAllVibes ? 'see less' : 'see more'}
+                                </button>
+                                {showAllVibes && ACCENT_OPTIONS.slice(VIBES_VISIBLE_COUNT).map((opt) => (
+                                    <button
+                                        key={opt.id}
+                                        type="button"
+                                        className={`accent-swatch ${accent === opt.id ? 'active' : ''}`}
+                                        style={{ backgroundColor: opt.color }}
+                                        onClick={() => setAccent(opt.id)}
+                                        aria-label={`Accent color: ${opt.name}`}
+                                        title={opt.name}
+                                    >
+                                        {accent === opt.id && <Check size={10} strokeWidth={3} className="accent-swatch-check" />}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="social-links">
