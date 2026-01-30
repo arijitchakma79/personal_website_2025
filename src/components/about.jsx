@@ -24,7 +24,7 @@ const About = () => {
 
         <div className="bio">
           <p>
-            I’m a junior computer science student at Drexel University 🐉. My research focuses on 2D/3D/4D generation, applied LLMs, and human–computer interaction (HCI), under Professor <a href="https://liufeng2915.github.io/" target="_blank" rel="noopener noreferrer" className="email-link">Feng Liu</a>.
+            I’m a junior computer science student at Drexel University 🐉. My research focuses on 2D/3D/4D generation, applied LLMs, and human–computer interaction (HCI), working under Professor <a href="https://liufeng2915.github.io/" target="_blank" rel="noopener noreferrer" className="email-link">Feng Liu</a>.
             I’m also a long-time developer with experience in full-stack and AI-powered applications, plus IoT and AR/VR.
           </p>
           <p>

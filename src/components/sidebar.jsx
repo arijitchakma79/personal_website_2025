@@ -13,9 +13,9 @@ const Sidebar = () => {
     const { theme, toggleTheme } = useTheme();
 
     const navLinks = [
-        { id: 'about-section', icon: <Home size={20} />, text: 'About' },
-        { id: 'resume-section', icon: <FileText size={20} />, text: 'Resume' },
-        { id: 'projects-section', icon: <Boxes size={20} />, text: 'Projects' },
+        { id: 'about-section', icon: <Home size={20} />, text: 'about' },
+        { id: 'resume-section', icon: <FileText size={20} />, text: 'resume' },
+        { id: 'projects-section', icon: <Boxes size={20} />, text: 'projects' },
     ];
 
     const socialLinks = [
@@ -64,16 +64,19 @@ const Sidebar = () => {
                 </div>
 
                 <div className="nav-links">
-                    {navLinks.map((link) => (
-                        <button
-                            key={link.id}
-                            className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
-                            onClick={() => scrollToSection(link.id)}
-                        >
-                            {link.icon}
-                            <span className="nav-text">{link.text}</span>
-                        </button>
-                    ))}
+                    {navLinks.map((link) => {
+                        const isSectionActive = location.pathname === '/' && activeSection === link.id;
+                        return (
+                            <button
+                                key={link.id}
+                                className={`nav-link ${isSectionActive ? 'active' : ''}`}
+                                onClick={() => scrollToSection(link.id)}
+                            >
+                                {link.icon}
+                                <span className="nav-text">{link.text}</span>
+                            </button>
+                        );
+                    })}
                     <NavLink
                         to="/hobbies"
                         className={({ isActive }) =>
@@ -82,7 +85,7 @@ const Sidebar = () => {
                         onClick={closeMenu}
                     >
                         <Palette size={20} />
-                        <span className="nav-text">Hobbies</span>
+                        <span className="nav-text">hobbies</span>
                     </NavLink>
                     <button 
                         className="nav-link theme-toggle-link" 
@@ -90,7 +93,7 @@ const Sidebar = () => {
                         aria-label="Toggle theme"
                     >
                         {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-                        <span className="nav-text">{theme === 'dark' ? 'Light' : 'Dark'}</span>
+                        <span className="nav-text">{theme === 'dark' ? 'light' : 'dark'}</span>
                     </button>
                 </div>
 

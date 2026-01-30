@@ -97,8 +97,7 @@ body {
 .app {
   display: flex;
   flex-direction: column; /* Ensures the main-content & footer are stacked */
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh; /* Allow app to grow so footer scrolls with content */
 }
 
 /* Sidebar */
@@ -125,12 +124,10 @@ body {
   width: calc(100% - var(--sidebar-width));
   max-width: calc(100% - var(--sidebar-width));
   overflow-x: hidden;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   background-color: var(--primary-bg);
   transition: background-color 0.3s ease;
-  height: 100vh;
   box-sizing: border-box;
 }
 
