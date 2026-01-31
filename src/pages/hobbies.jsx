@@ -15,7 +15,7 @@ const arts = [
 const Hobbies = () => {
     return (
         <div className="hobbies-page">
-            <h1 className="hobbies-title">Hobbies & Arts</h1>
+            <h1 className="hobbies-title">collections</h1>
             <div className="arts-grid">
                 {arts.map((art) => (
                     <article key={art.id} className="art-card">
