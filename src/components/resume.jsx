@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Briefcase, Award, FileText, BookOpen, Languages, Dumbbell, ScrollText } from 'lucide-react';
+import { GraduationCap, Briefcase, Award, FileText, BookOpen } from 'lucide-react';
 import '../styles/resume.css';
 import logo from '../assets/drexel_logo.png';
 import drexelCciResearchLogo from '../assets/drexel_cci_research_logo.jpg';
@@ -176,7 +176,7 @@ const Resume = () => {
         <div className="item">
           <Award className="icon" size={20} />
           <div className="content">
-            <h3>Best Beginner Quantum Computing Track</h3>
+            <h3>Beginner Quantum Computing Track - 2nd Place</h3>
             <p className="subtitle">Bitcamps 2025 @ (University of Maryland, College Park)</p>
           </div>
         </div>
@@ -230,31 +230,6 @@ const Resume = () => {
               1 out of 13 international students who were awarded this prestigious scholarship in
               2022
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Miscellaneous Section */}
-      <section className="resume-section misc-section">
-        <h2>miscellaneous</h2>
-        <div className="misc-grid">
-          <div className="misc-card">
-            <div className="misc-card-icon">
-              <Languages size={20} />
-            </div>
-            <span>i'm learning chinese</span>
-          </div>
-          <div className="misc-card">
-            <div className="misc-card-icon">
-              <Dumbbell size={20} />
-            </div>
-            <span>i love working out</span>
-          </div>
-          <div className="misc-card">
-            <div className="misc-card-icon">
-              <ScrollText size={20} />
-            </div>
-            <span>i love ancient history</span>
           </div>
         </div>
       </section>

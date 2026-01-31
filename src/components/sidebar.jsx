@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
-import { Home, FileText, Boxes, Palette, Instagram, Linkedin, Github, Twitter, Menu, X, Sun, Moon, Check } from 'lucide-react';
-import { useTheme, ACCENT_OPTIONS } from '../contexts/ThemeContext';
+import { Home, FileText, Boxes, Palette, Sun, Moon, Instagram, Linkedin, Github, Twitter, Menu, X } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 import profileImg from '../assets/profile_pic.JPG';
 import '../styles/sidebar.css';
-
-const VIBES_VISIBLE_COUNT = 3;
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('about-section');
-    const [showAllVibes, setShowAllVibes] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
-    const { theme, toggleTheme, accent, setAccent } = useTheme();
+    const { theme, toggleTheme } = useTheme();
 
     const navLinks = [
         { id: 'about-section', icon: <Home size={20} />, text: 'about' },
@@ -117,57 +114,17 @@ const Sidebar = () => {
                         onClick={closeMenu}
                     >
                         <Palette size={20} />
-                        <span className="nav-text">hobbies</span>
+                        <span className="nav-text">arts</span>
                     </NavLink>
-                    <button 
-                        className="nav-link theme-toggle-link" 
-                        onClick={toggleTheme}
+                    <button
+                        type="button"
+                        className="nav-link"
+                        onClick={() => { toggleTheme(); closeMenu(); }}
                         aria-label="Toggle theme"
                     >
                         {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                         <span className="nav-text">{theme === 'dark' ? 'light' : 'dark'}</span>
                     </button>
-                    <div className="accent-picker nav-link-size">
-                        <span className="accent-picker-label">✨ theme</span>
-                        <div className="accent-picker-body">
-                            <div className="accent-swatches">
-                                {ACCENT_OPTIONS.slice(0, VIBES_VISIBLE_COUNT).map((opt) => (
-                                    <button
-                                        key={opt.id}
-                                        type="button"
-                                        className={`accent-swatch ${accent === opt.id ? 'active' : ''}`}
-                                        style={{ backgroundColor: opt.color }}
-                                        onClick={() => setAccent(opt.id)}
-                                        aria-label={`Accent color: ${opt.name}`}
-                                        title={opt.name}
-                                    >
-                                        {accent === opt.id && <Check size={10} strokeWidth={3} className="accent-swatch-check" />}
-                                    </button>
-                                ))}
-                                <button
-                                    type="button"
-                                    className="accent-see-more"
-                                    onClick={() => setShowAllVibes((v) => !v)}
-                                    aria-expanded={showAllVibes}
-                                >
-                                    {showAllVibes ? 'see less' : 'see more'}
-                                </button>
-                                {showAllVibes && ACCENT_OPTIONS.slice(VIBES_VISIBLE_COUNT).map((opt) => (
-                                    <button
-                                        key={opt.id}
-                                        type="button"
-                                        className={`accent-swatch ${accent === opt.id ? 'active' : ''}`}
-                                        style={{ backgroundColor: opt.color }}
-                                        onClick={() => setAccent(opt.id)}
-                                        aria-label={`Accent color: ${opt.name}`}
-                                        title={opt.name}
-                                    >
-                                        {accent === opt.id && <Check size={10} strokeWidth={3} className="accent-swatch-check" />}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div className="social-links">
