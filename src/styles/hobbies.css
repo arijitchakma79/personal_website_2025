@@ -1,41 +1,83 @@
 /* Hobbies.css */
-.hobbies-coming-soon {
+.hobbies-page {
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    min-height: 100%;
     color: var(--text-primary);
     background-color: var(--primary-bg);
-    padding: 40px 20px;
+    padding: 40px 24px;
     box-sizing: border-box;
 }
 
-.hobbies-coming-soon h1 {
-    font-size: clamp(32px, 5vw, 48px);
+.hobbies-title {
+    font-size: clamp(28px, 4vw, 40px);
     font-weight: bold;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
-.hobbies-coming-soon p {
-    font-size: clamp(16px, 2.5vw, 20px);
-    color: var(--text-secondary);
-    margin-top: 8px;
+.arts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
 }
 
-.hobbies-emoji {
-    font-size: 48px;
-    margin-bottom: 12px;
-    animation: float 3s ease-in-out infinite;
+.art-card {
+    background: var(--card-bg, rgba(255, 255, 255, 0.04));
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
+.art-image-wrap {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--secondary-bg, #1a1a1a);
+}
+
+.art-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: object-fit 0.3s ease;
+}
+
+.art-card:hover .art-image {
+    object-fit: contain;
+}
+
+.art-info {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.art-card:hover .art-info {
+    opacity: 1;
+}
+
+.art-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #fff;
+}
+
+.art-meta {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+@media (hover: none) {
+    .art-info {
+        opacity: 1;
     }
 }
